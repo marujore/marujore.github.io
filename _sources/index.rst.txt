@@ -1,0 +1,54 @@
+Rennan Marujo
+==============================
+
+
+Welcome to the **Rennan Marujo** page!
+
+
+.. toctree::
+    :hidden:
+
+    self
+
+
+.. toctree::
+    :maxdepth: 1
+    :caption: General Information:
+
+    ./general-info/general-info
+
+
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Classes:
+
+    ./classes/classes
+
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Publications:
+
+    ./publications/publications
+
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Repositories:
+
+    ./repositories/repositories
+
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Personal Projects:
+
+    ./personal-projects/personal-projects
+
+
+.. toctree::
+    :maxdepth: 1
+    :caption: Contact:
+
+    ./contact/contact
