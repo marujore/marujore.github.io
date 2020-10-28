@@ -1,0 +1,23 @@
+BDC Tiling System
++++++++++++++++++
+
+The organization of data cubes are based on a spatial partion of the territory, generating a grid of tiles, so that every pixel can efficiently located within a tile. In the BDC project each tile of a grid generates a single file in the disk. Considering the spatial resolution of the images and aimed at maintaining files that can be manageable, three hierarchical grids were defined using an Albers Equal Area projection and SIRGAS 2000 datum. The three grids are generated taking -54 longitude as the central reference and defining tiles of 6x4, 3x2 and 1.5x1 degrees, referred as BDC_LG (large), BDC_MD (medium) and BDC_SM (small), as shown in Figure :numref:`Figure %s <fig:bdc-grid>` and the following Table:
+
++-----------+---------------------------------------+----------------+---------------------+
+| Grid Name + Satellite Sensor (spatial resolution) + Extension (km) + Image Size (pixels) |
++===========+=======================================+================+=====================+
+| BDC_LG    + CBERS-4/AWFI (64 m)                   + 672 x 440 km   + 10,504 x 6,865      +
++-----------+---------------------------------------+----------------+---------------------+
+| BDC_MD    + Landsat-8/OLI (30 m)                  + 336 x 220 km   + 11,204 x 7,324      +
++-----------+---------------------------------------+----------------+---------------------+
+| BDC_SM    + Sentinel-2/MSI (10 m)                 + 168 x 110 km   + 16,806 x 10,986     +
++-----------+---------------------------------------+----------------+---------------------+
+
+
+.. figure:: ./imgs/bdc_grid.png
+    :alt: BDC Grid
+    :width: 600
+    :figclass: align-center
+    :name: fig:bdc-grid
+
+    BDC tiling system showing *BDC_LG* overlayed on Brazilian Biomes (a), illustrating that one *BDC_LG* tile (b) contains four *BDC_MD* tiles (c) and that *BDC_MD* contains four *BDC_SM* tiles (d).

@@ -1,0 +1,13 @@
+Accessing BDC
++++++++++++++
+
+BDC Website http://brazildatacube.org/pt/pagina-inicial-2/
+
+BDC Portal http://brazildatacube.dpi.inpe.br/portal/explore
+
+Brazil Data Cube Documentation: https://brazil-data-cube.github.io/
+
+BDC WORCAP Course (2020) - Brazil Data Cube access and visualization of Earth Observation Data in Python:
+https://brazil-data-cube.github.io/worcap-2020/access-view.html#
+
+https://www.kaggle.com/marujore/cbers-plot/

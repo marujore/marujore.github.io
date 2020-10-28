@@ -173,4 +173,4 @@ References
 
 .. _Pinto2016:
 
-- PINTO, C., PONZONI, F., CASTRO, R., LEIGH, L., MISHRA, N., AARON, D., HELDER, D. FFirst in-Flight Radiometric Calibration of MUX and WFI on-Board CBERS-4. Remote Sensing. 2016. doi: 10.3390/rs8050405.
+- PINTO, C., PONZONI, F., CASTRO, R., LEIGH, L., MISHRA, N., AARON, D., HELDER, D. FFirst in-Flight Radiometric Calibration of MUX and WFI on-Board CBERS-4. Remote Sensing. 2016. doi: http://10.3390/rs8050405.

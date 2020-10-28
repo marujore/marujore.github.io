@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Data Cubes &mdash; Rennan Marujo</title>
+  <title>BDC Data acquisition and ARD processing &mdash; Rennan Marujo</title>
   
 
   
@@ -17,7 +17,7 @@
   
   
   
-    <link rel="canonical" href="https://rennan-marujo.github.io/classes/data-cubes/intro.html"/>
+    <link rel="canonical" href="https://rennan-marujo.github.io/classes/data-cubes/bdc_data_acq.html"/>
   
 
   
@@ -43,8 +43,8 @@
   <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Marujo’s Thesys and Gap-filling" href="marujo_thesys.html" />
-    <link rel="prev" title="Nadir BRDF (Bidirectional Reflectance Distribution Function)-Adjusted Reflectance (NBAR)" href="../radiometric-correction/nbar.html" /> 
+    <link rel="next" title="BDC Tiling System" href="bdc_tilling.html" />
+    <link rel="prev" title="BDC Concepts" href="bdc_concepts.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -102,16 +102,16 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../classes.html">Classes</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../radiometric-correction/intro.html">Radiometric Correction</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Data Cubes</a><ul>
+<li class="toctree-l2 current"><a class="reference internal" href="intro.html">Data Cubes</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="marujo_thesys.html">Marujo’s Thesys and Gap-filling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="initiatives.html">Data Cube Initiatives</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bdc.html">Brazil Data Cube</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bdc_concepts.html">BDC Concepts</a></li>
-<li class="toctree-l3"><a class="reference internal" href="bdc_data_acq.html">BDC Data acquisition and ARD processing</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">BDC Data acquisition and ARD processing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bdc_tilling.html">BDC Tiling System</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bdc_dcgeneration.html">Data cubes generation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="accessing-bdc.html">Accessing BDC</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#references">Referênces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro.html#references">Referênces</a></li>
 </ul>
 </li>
 </ul>
@@ -179,7 +179,9 @@
         
           <li><a href="../classes.html">Classes</a> &raquo;</li>
         
-      <li>Data Cubes</li>
+          <li><a href="intro.html">Data Cubes</a> &raquo;</li>
+        
+      <li>BDC Data acquisition and ARD processing</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -193,10 +195,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="marujo_thesys.html" class="btn btn-neutral float-right" title="Marujo’s Thesys and Gap-filling" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="bdc_tilling.html" class="btn btn-neutral float-right" title="BDC Tiling System" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../radiometric-correction/nbar.html" class="btn btn-neutral float-left" title="Nadir BRDF (Bidirectional Reflectance Distribution Function)-Adjusted Reflectance (NBAR)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="bdc_concepts.html" class="btn btn-neutral float-left" title="BDC Concepts" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -205,29 +207,29 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="data-cubes">
-<h1>Data Cubes<a class="headerlink" href="#data-cubes" title="Permalink to this headline">¶</a></h1>
-<p>Nowadays we have free access to an unprecedentedly large amount of remote sensing images collected by different satellites and sensors with distinct spatial, temporal, and spectral resolutions. This has motivated the use of time series analysis to extract landscape change information from these images. Datacubes are a new paradigm revolutionizing the way users can interact with EO data and providing a promising solution for the storage, organization, management, and analysis of Big EO data (<a class="reference internal" href="#baumann2018"><span class="std std-ref">Baumann et al., 2018</span></a>).</p>
-<div class="align-center figure align-default" id="fig-dc-example">
-<a class="reference internal image-reference" href="../../_images/dc_example.png"><img alt="Data Cube Example." src="../../_images/dc_example.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Figure 8 - </span><span class="caption-text">Data Cube example. Source: Adapted from <a class="reference external" href="https://www.mdba.gov.au/sites/default/files/pubs/Data-cube-report.pdf">https://www.mdba.gov.au/sites/default/files/pubs/Data-cube-report.pdf</a></span><a class="headerlink" href="#fig-dc-example" title="Permalink to this image">¶</a></p>
+  <div class="section" id="bdc-data-acquisition-and-ard-processing">
+<h1>BDC Data acquisition and ARD processing<a class="headerlink" href="#bdc-data-acquisition-and-ard-processing" title="Permalink to this headline">¶</a></h1>
+<p>Figure <a class="reference internal" href="#fig-bdc-architecture"><span class="std std-numref">Figure 20</span></a> details the the generation of ARD data set and its organization as data cubes. Currently, we are using images from Sentinel-2 (A and B) MultiSpectral Instrument (MSI), Landsat-8 Operational Land Imager (OLI) and Thermal Infrared Sensor (TIRS), CBERS-4 Advanced Wide-Field Imager (AWFI), CBERS-4 Multispectral Camera (MUX) and, AQUA/TERRA Moderate Resolution Imaging Spectroradiometer (MODIS), from 2017 to 2020, covering the Brazilian territory.</p>
+<div class="align-center figure align-default" id="fig-bdc-architecture">
+<a class="reference internal image-reference" href="../../_images/bdc_architecture.png"><img alt="BDC Architecture" src="../../_images/bdc_architecture.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Figure 20 - </span><span class="caption-text">Data acquisition, ARD processing and data cube generation.</span><a class="headerlink" href="#fig-bdc-architecture" title="Permalink to this image">¶</a></p>
 </div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="marujo_thesys.html">Marujo’s Thesys and Gap-filling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="initiatives.html">Data Cube Initiatives</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bdc.html">Brazil Data Cube</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bdc_concepts.html">BDC Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bdc_data_acq.html">BDC Data acquisition and ARD processing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bdc_tilling.html">BDC Tiling System</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bdc_dcgeneration.html">Data cubes generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="accessing-bdc.html">Accessing BDC</a></li>
-</ul>
-</div>
+<p>The images are collected from different providers and pre-processed into surface reflectance products.</p>
+<p>CBERS-4 images are acquired from INPE (<a class="reference external" href="http://cdsr.dpi.inpe.br/inpe-stac/">http://cdsr.dpi.inpe.br/inpe-stac/</a>).</p>
+<p>Landsat-8 images are acquired mainly from USGS (<a class="reference external" href="http://earthexplorer.usgs.gov/">http://earthexplorer.usgs.gov/</a>), but can also be obtained at Google (<a class="reference external" href="https://cloud.google.com/storage/docs/public-datasets/landsat?hl=pt-br">https://cloud.google.com/storage/docs/public-datasets/landsat?hl=pt-br</a>). It can also be found on AWS (<a class="reference external" href="https://registry.opendata.aws/landsat-8/">https://registry.opendata.aws/landsat-8/</a>)</p>
+<p>Sentinel-2 images are acquired mainly from ESA scihub (<a class="reference external" href="https://scihub.copernicus.eu/dhus/#/home">https://scihub.copernicus.eu/dhus/#/home</a>). But due to data policy it can also be obtained in official mirrors as CREODIAS (<a class="reference external" href="https://finder.creodias.eu">https://finder.creodias.eu</a>/#), ONDADIAS (<a class="reference external" href="https://www.onda-dias.eu/cms/">https://www.onda-dias.eu/cms/</a>). It can also be found on AWS (<a class="reference external" href="https://registry.opendata.aws/sentinel-2/">https://registry.opendata.aws/sentinel-2/</a>) and L2A AWS (<a class="reference external" href="https://registry.opendata.aws/sentinel-2-l2a-cogs/">https://registry.opendata.aws/sentinel-2-l2a-cogs/</a>).</p>
+<p>The atmospheric correction procedure depends on each sensor’s characteristics, and different algorithms and software are used. For example, Sentinel-2/MSI and Landsat-8/OLI the LaSRC software is used <a class="reference internal" href="#usgs-2018"><span class="std std-ref">USGS (2018)</span></a> and for CBERS-4/AWFI and MUX the MS3 software (<a class="reference internal" href="#silva2013"><span class="std std-ref">Silva et al., 2013</span></a>).</p>
+<p>For each image, cloud and cloud shadow masks are computed. For Sentinel-2 and Landsat-8, the Fmask (version 4.2) is being used (<a class="reference internal" href="#qiu2019"><span class="std std-ref">Qiu et al., 2019</span></a>) (<a class="reference external" href="https://github.com/GERSL/Fmask">https://github.com/GERSL/Fmask</a>). For CBERS-4  the CMASK algorithm is used because it doesn’t have spectral bands required by Fmask. Once this process is performed and the resulting data set is cataloged the surface reflectance collections are used to generate the data cubes.</p>
 <div class="section" id="references">
-<h2>Referênces<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<ul class="simple" id="baumann2018">
-<li><p>BAUMANN, P.; MISEV, D.; MERTICARIU, V.; HUU, B.P. Datacubes: Towards Space/Time Analysis-Ready Data. In Service-Oriented Mapping; Springer: Cham, Switzerland, 2019; pp. 269–299.</p></li>
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="usgs-2018">
+<li><p>UNITED STATES GEOLOGICAL SURVEY - USGS. User guide: Earth resources observation and science (EROS) Center Science Processing Architecture(ESPA) on demand interface. Tech. rep., USGS, Sioux Falls, 2018. Access in: 24 Jun. 2019.</p></li>
+</ul>
+<ul class="simple" id="silva2013">
+<li><p>SILVA, M. A. O. da; ANDRADE, A. C. de. (2013). Geração de Imagens de Reflectância no Topo da Atmosfera e na Superfície de um Ponto de Vista Geométrico. Simposio Brasileiro de Sensoriamento Remoto, 8238–8245. Retrieved from <a class="reference external" href="http://marte2.sid.inpe.br/attachment.cgi/dpi.inpe.br/marte2/2013/05.28.23.16.50/doc/p0309.pdf">http://marte2.sid.inpe.br/attachment.cgi/dpi.inpe.br/marte2/2013/05.28.23.16.50/doc/p0309.pdf</a></p></li>
+</ul>
+<ul class="simple" id="qiu2019">
+<li><p>QIU, S., ZHU, Z.; HE, B. (2019). Fmask 4.0: Improved cloud and cloud shadow detection in Landsats 4–8 and Sentinel-2 imagery. Remote Sensing of Environment, 231(May), 111205. <a class="reference external" href="https://doi.org/10.1016/j.rse.2019.05.024">https://doi.org/10.1016/j.rse.2019.05.024</a></p></li>
 </ul>
 </div>
 </div>
@@ -240,10 +242,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="marujo_thesys.html" class="btn btn-neutral float-right" title="Marujo’s Thesys and Gap-filling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="bdc_tilling.html" class="btn btn-neutral float-right" title="BDC Tiling System" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../radiometric-correction/nbar.html" class="btn btn-neutral float-left" title="Nadir BRDF (Bidirectional Reflectance Distribution Function)-Adjusted Reflectance (NBAR)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="bdc_concepts.html" class="btn btn-neutral float-left" title="BDC Concepts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

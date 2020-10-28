@@ -1,0 +1,43 @@
+BDC Data acquisition and ARD processing
++++++++++++++++++++++++++++++++++++++++
+
+Figure :numref:`Figure %s <fig:bdc-architecture>` details the the generation of ARD data set and its organization as data cubes. Currently, we are using images from Sentinel-2 (A and B) MultiSpectral Instrument (MSI), Landsat-8 Operational Land Imager (OLI) and Thermal Infrared Sensor (TIRS), CBERS-4 Advanced Wide-Field Imager (AWFI), CBERS-4 Multispectral Camera (MUX) and, AQUA/TERRA Moderate Resolution Imaging Spectroradiometer (MODIS), from 2017 to 2020, covering the Brazilian territory.
+
+.. figure:: ./imgs/bdc_architecture.png
+    :alt: BDC Architecture
+    :width: 600
+    :figclass: align-center
+    :name: fig:bdc-architecture
+
+    Data acquisition, ARD processing and data cube generation.
+
+
+The images are collected from different providers and pre-processed into surface reflectance products.
+
+CBERS-4 images are acquired from INPE (http://cdsr.dpi.inpe.br/inpe-stac/).
+
+Landsat-8 images are acquired mainly from USGS (http://earthexplorer.usgs.gov/), but can also be obtained at Google (https://cloud.google.com/storage/docs/public-datasets/landsat?hl=pt-br). It can also be found on AWS (https://registry.opendata.aws/landsat-8/)
+
+Sentinel-2 images are acquired mainly from ESA scihub (https://scihub.copernicus.eu/dhus/#/home). But due to data policy it can also be obtained in official mirrors as CREODIAS (https://finder.creodias.eu/#), ONDADIAS (https://www.onda-dias.eu/cms/). It can also be found on AWS (https://registry.opendata.aws/sentinel-2/) and L2A AWS (https://registry.opendata.aws/sentinel-2-l2a-cogs/).
+
+The atmospheric correction procedure depends on each sensor's characteristics, and different algorithms and software are used. For example, Sentinel-2/MSI and Landsat-8/OLI the LaSRC software is used :ref:`USGS (2018) <USGS_2018>` and for CBERS-4/AWFI and MUX the MS3 software (:ref:`Silva et al., 2013<Silva2013>`).
+
+For each image, cloud and cloud shadow masks are computed. For Sentinel-2 and Landsat-8, the Fmask (version 4.2) is being used (:ref:`Qiu et al., 2019<Qiu2019>`) (https://github.com/GERSL/Fmask). For CBERS-4  the CMASK algorithm is used because it doesn't have spectral bands required by Fmask. Once this process is performed and the resulting data set is cataloged the surface reflectance collections are used to generate the data cubes.
+
+
+References
+""""""""""
+
+.. _USGS_2018:
+
+- UNITED STATES GEOLOGICAL SURVEY - USGS. User guide: Earth resources observation and science (EROS) Center Science Processing Architecture(ESPA) on demand interface. Tech. rep., USGS, Sioux Falls, 2018. Access in: 24 Jun. 2019.
+
+
+.. _Silva2013:
+
+- SILVA, M. A. O. da; ANDRADE, A. C. de. (2013). Geração de Imagens de Reflectância no Topo da Atmosfera e na Superfície de um Ponto de Vista Geométrico. Simposio Brasileiro de Sensoriamento Remoto, 8238–8245. Retrieved from http://marte2.sid.inpe.br/attachment.cgi/dpi.inpe.br/marte2/2013/05.28.23.16.50/doc/p0309.pdf
+
+
+.. _Qiu2019:
+
+- QIU, S., ZHU, Z.; HE, B. (2019). Fmask 4.0: Improved cloud and cloud shadow detection in Landsats 4–8 and Sentinel-2 imagery. Remote Sensing of Environment, 231(May), 111205. https://doi.org/10.1016/j.rse.2019.05.024

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Data Cubes &mdash; Rennan Marujo</title>
+  <title>Data cubes generation &mdash; Rennan Marujo</title>
   
 
   
@@ -17,7 +17,7 @@
   
   
   
-    <link rel="canonical" href="https://rennan-marujo.github.io/classes/data-cubes/intro.html"/>
+    <link rel="canonical" href="https://rennan-marujo.github.io/classes/data-cubes/bdc_dcgeneration.html"/>
   
 
   
@@ -43,8 +43,8 @@
   <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Marujo’s Thesys and Gap-filling" href="marujo_thesys.html" />
-    <link rel="prev" title="Nadir BRDF (Bidirectional Reflectance Distribution Function)-Adjusted Reflectance (NBAR)" href="../radiometric-correction/nbar.html" /> 
+    <link rel="next" title="Accessing BDC" href="accessing-bdc.html" />
+    <link rel="prev" title="BDC Tiling System" href="bdc_tilling.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -102,16 +102,16 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../classes.html">Classes</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../radiometric-correction/intro.html">Radiometric Correction</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Data Cubes</a><ul>
+<li class="toctree-l2 current"><a class="reference internal" href="intro.html">Data Cubes</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="marujo_thesys.html">Marujo’s Thesys and Gap-filling</a></li>
 <li class="toctree-l3"><a class="reference internal" href="initiatives.html">Data Cube Initiatives</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bdc.html">Brazil Data Cube</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bdc_concepts.html">BDC Concepts</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bdc_data_acq.html">BDC Data acquisition and ARD processing</a></li>
 <li class="toctree-l3"><a class="reference internal" href="bdc_tilling.html">BDC Tiling System</a></li>
-<li class="toctree-l3"><a class="reference internal" href="bdc_dcgeneration.html">Data cubes generation</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Data cubes generation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="accessing-bdc.html">Accessing BDC</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#references">Referênces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro.html#references">Referênces</a></li>
 </ul>
 </li>
 </ul>
@@ -179,7 +179,9 @@
         
           <li><a href="../classes.html">Classes</a> &raquo;</li>
         
-      <li>Data Cubes</li>
+          <li><a href="intro.html">Data Cubes</a> &raquo;</li>
+        
+      <li>Data cubes generation</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -193,10 +195,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="marujo_thesys.html" class="btn btn-neutral float-right" title="Marujo’s Thesys and Gap-filling" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="accessing-bdc.html" class="btn btn-neutral float-right" title="Accessing BDC" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../radiometric-correction/nbar.html" class="btn btn-neutral float-left" title="Nadir BRDF (Bidirectional Reflectance Distribution Function)-Adjusted Reflectance (NBAR)" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="bdc_tilling.html" class="btn btn-neutral float-left" title="BDC Tiling System" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
   </div>
   
@@ -205,31 +207,24 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="data-cubes">
-<h1>Data Cubes<a class="headerlink" href="#data-cubes" title="Permalink to this headline">¶</a></h1>
-<p>Nowadays we have free access to an unprecedentedly large amount of remote sensing images collected by different satellites and sensors with distinct spatial, temporal, and spectral resolutions. This has motivated the use of time series analysis to extract landscape change information from these images. Datacubes are a new paradigm revolutionizing the way users can interact with EO data and providing a promising solution for the storage, organization, management, and analysis of Big EO data (<a class="reference internal" href="#baumann2018"><span class="std std-ref">Baumann et al., 2018</span></a>).</p>
-<div class="align-center figure align-default" id="fig-dc-example">
-<a class="reference internal image-reference" href="../../_images/dc_example.png"><img alt="Data Cube Example." src="../../_images/dc_example.png" style="width: 600px;" /></a>
-<p class="caption"><span class="caption-number">Figure 8 - </span><span class="caption-text">Data Cube example. Source: Adapted from <a class="reference external" href="https://www.mdba.gov.au/sites/default/files/pubs/Data-cube-report.pdf">https://www.mdba.gov.au/sites/default/files/pubs/Data-cube-report.pdf</a></span><a class="headerlink" href="#fig-dc-example" title="Permalink to this image">¶</a></p>
+  <div class="section" id="data-cubes-generation">
+<h1>Data cubes generation<a class="headerlink" href="#data-cubes-generation" title="Permalink to this headline">¶</a></h1>
+<p>We are creating <em>identity</em> data cubes and <em>regular</em> data cubes. Currently, each data cube contains images from a single sensor. An identity data cube uses all available images in a period of time, tiled to a common grid. We call it <em>identity</em> because, in its generation, the temporal composition maintains the date of acquisition, and the cubes are irregular in the time dimension.</p>
+<p>Other functions for temporal composing can generate regular, in the time dimension, data cubes. This is performed by reducing the time dimension to a longer unit (e.g. a month or 16 days), generating observations that are regularly spaced in time generating the regular data cubes.</p>
+<p>This process to generate the data cubes illustrated in <a class="reference internal" href="#fig-bdc-cube-builder"><span class="std std-numref">Figure 22</span></a>, it is composed of two steps: <em>warping</em>, and <em>temporal composing</em>. The warping process generates the identity data cubes; the input images are resampled to the same spatial resolution using a bilinear function for all bands and nearest neighbor for cloud masks; the images are re-projected to the common projection, and images sensing in the same day are merged into one mosaic; finally, the mosaic is cropped into the grid tile extension.</p>
+<div class="align-center figure align-default" id="fig-bdc-cube-builder">
+<a class="reference internal image-reference" href="../../_images/cube_builder.png"><img alt="BDC Cube Builder" src="../../_images/cube_builder.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Figure 22 - </span><span class="caption-text">The process to generate a 1 month regular data cube, considering a grid tile.</span><a class="headerlink" href="#fig-bdc-cube-builder" title="Permalink to this image">¶</a></p>
 </div>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="marujo_thesys.html">Marujo’s Thesys and Gap-filling</a></li>
-<li class="toctree-l1"><a class="reference internal" href="initiatives.html">Data Cube Initiatives</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bdc.html">Brazil Data Cube</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bdc_concepts.html">BDC Concepts</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bdc_data_acq.html">BDC Data acquisition and ARD processing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bdc_tilling.html">BDC Tiling System</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bdc_dcgeneration.html">Data cubes generation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="accessing-bdc.html">Accessing BDC</a></li>
-</ul>
+<p>Regular data cubes require the definition of a regular time step (e.g., one month or 16 days) that will guide the temporal composition of multiples images available in each time step. After the warping process, the time composing function is applied to the identity data cubes. It defines the approach to select, or generate, a value representing the series of observations available during the time step. It should be noticed that temporal compositions consider only valid observations, which are not detected as cloud, cloud shadow, snow, or taking into account the quality assessment band.</p>
+<p>Currently, BDC supports three functions for temporal composition: <em>median</em>, <em>average</em>, and <em>stack</em> as illustrated in <a class="reference internal" href="#fig-bdc-compositing-functions"><span class="std std-numref">Figure 23</span></a>. The median composing function consists of, given a time step, for each image band, calculate the median value of the valid observations and use it as the observation for that time step. The median function uses the central value, while keeping an existing observation, removing outliers in a given time step. The average composition uses the average of all valid observations in the time step. Is will also remove outliers, but in this case a new smoothed observation is generated.</p>
+<p>The stack time composing function is the best pixel approach; it consists of ranking the time step images by the number of valid observations and selecting the observation from the better-ranked image. The stack composition ensures that observations coming from less cloud coverage have a higher probability of being selected to represent the time step.</p>
+<div class="align-center figure align-default" id="fig-bdc-compositing-functions">
+<a class="reference internal image-reference" href="../../_images/compositing_function.png"><img alt="BDC Cube Builder" src="../../_images/compositing_function.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Figure 23 - </span><span class="caption-text">Brazil Data Cube time composing functions (average, median and stack) applied on a pixel obtained from a monthly time step.</span><a class="headerlink" href="#fig-bdc-compositing-functions" title="Permalink to this image">¶</a></p>
 </div>
-<div class="section" id="references">
-<h2>Referênces<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<ul class="simple" id="baumann2018">
-<li><p>BAUMANN, P.; MISEV, D.; MERTICARIU, V.; HUU, B.P. Datacubes: Towards Space/Time Analysis-Ready Data. In Service-Oriented Mapping; Springer: Cham, Switzerland, 2019; pp. 269–299.</p></li>
-</ul>
-</div>
+<p>The image collections and data cubes are distributed as Cloud Optimized GeoTIFF (COG) files, with an internal organization that enables efficient data access in the distributed and high-performance cloud environments. In the data cubes, each GeoTIFF file contains information of a band or property of a specific tile of the BDC tiling system and of a certain time period.</p>
+<p>Besides the spectral bands from original satellite images, the data cube files also contain: (1) cloud mask; (2) spectral indices (NDVI and EVI); (3) a band that indicates the total of valid observations (excluding cloud, cloud shadow, snow, or partial images) for pixel before time composing; (4) a data provenance band that indicates the image of origin of each pixel, when stack composing function is applied; (5) a thumbnail for each time step.</p>
 </div>
 
 
@@ -240,10 +235,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="marujo_thesys.html" class="btn btn-neutral float-right" title="Marujo’s Thesys and Gap-filling" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="accessing-bdc.html" class="btn btn-neutral float-right" title="Accessing BDC" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../radiometric-correction/nbar.html" class="btn btn-neutral float-left" title="Nadir BRDF (Bidirectional Reflectance Distribution Function)-Adjusted Reflectance (NBAR)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="bdc_tilling.html" class="btn btn-neutral float-left" title="BDC Tiling System" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

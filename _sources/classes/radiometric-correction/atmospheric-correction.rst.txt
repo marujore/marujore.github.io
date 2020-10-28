@@ -38,20 +38,20 @@ The physical-based approaches, such as *Atmospheric/Topographic CORrection* (ATC
     MODTRAN attenuation Sources. **Source** Alexander (Lex) GRSS presentation.
 
 
-Atmospheric models can be used to account for the effects of scattering and absorption in the atmosphere. A number of parameters are required to accurately apply atmospheric correction, including properties such as the amount of water vapor, distribution of aerosols. Sometimes this data can be collected by field instruments that measure atmospheric gases and aerosols, but this is often expensive and time consuming. Other satellite data can also be used to help estimate the amount and distribution of atmospheric aerosols. Many software packages include special atmospheric correction modules that use atmospheric radiation transfer models to produce an estimate of the true surface reflectance. Nowadays there are several fully automated atmospheric correction methods, for instance the Landsat Ecosystem Disturbance Adaptive Processing System (LEDAPS) software (Masek et al.,2006), LaSRC, Sen2cor
+Atmospheric models can be used to account for the effects of scattering and absorption in the atmosphere. A number of parameters are required to accurately apply atmospheric correction, including properties such as the amount of water vapor, distribution of aerosols. Sometimes this data can be collected by field instruments that measure atmospheric gases and aerosols, but this is often expensive and time consuming. Other satellite data can also be used to help estimate the amount and distribution of atmospheric aerosols. Many software packages include special atmospheric correction modules that use atmospheric radiation transfer models to produce an estimate of the true surface reflectance. Nowadays there are several fully automated atmospheric correction methods, for instance the Landsat Ecosystem Disturbance Adaptive Processing System (LEDAPS) software (Masek et al.,2006), LaSRC, Sen2cor.
 
 
 Atmospheric Correction Processor Dockers
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-`LaSRC LEDAPS FMASK <https://github.com/marujore/LaSRC-LEDAPS-Fmask>`_
+`LaSRC LEDAPS FMASK (all in one) <https://github.com/marujore/LaSRC-LEDAPS-Fmask>`_
 
 
 `LaSRC <https://github.com/marujore/LaSRC_docker>`_
 
 
-`Sen2cor <https://github.com/marujore/Sen2cor>`_
+`Sen2cor <https://github.com/marujore/sen2cor>`_
 
 
 References

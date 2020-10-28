@@ -1,0 +1,37 @@
+Data cubes generation
++++++++++++++++++++++
+
+We are creating *identity* data cubes and *regular* data cubes. Currently, each data cube contains images from a single sensor. An identity data cube uses all available images in a period of time, tiled to a common grid. We call it *identity* because, in its generation, the temporal composition maintains the date of acquisition, and the cubes are irregular in the time dimension. 
+
+Other functions for temporal composing can generate regular, in the time dimension, data cubes. This is performed by reducing the time dimension to a longer unit (e.g. a month or 16 days), generating observations that are regularly spaced in time generating the regular data cubes.
+
+This process to generate the data cubes illustrated in :numref:`Figure %s <fig:bdc-cube-builder>`, it is composed of two steps: *warping*, and *temporal composing*. The warping process generates the identity data cubes; the input images are resampled to the same spatial resolution using a bilinear function for all bands and nearest neighbor for cloud masks; the images are re-projected to the common projection, and images sensing in the same day are merged into one mosaic; finally, the mosaic is cropped into the grid tile extension.
+
+
+.. figure:: ./imgs/cube_builder.png
+    :alt: BDC Cube Builder
+    :width: 600
+    :figclass: align-center
+    :name: fig:bdc-cube-builder
+
+    The process to generate a 1 month regular data cube, considering a grid tile.
+
+
+Regular data cubes require the definition of a regular time step (e.g., one month or 16 days) that will guide the temporal composition of multiples images available in each time step. After the warping process, the time composing function is applied to the identity data cubes. It defines the approach to select, or generate, a value representing the series of observations available during the time step. It should be noticed that temporal compositions consider only valid observations, which are not detected as cloud, cloud shadow, snow, or taking into account the quality assessment band.
+
+Currently, BDC supports three functions for temporal composition: *median*, *average*, and *stack* as illustrated in :numref:`Figure %s <fig:bdc-compositing-functions>`. The median composing function consists of, given a time step, for each image band, calculate the median value of the valid observations and use it as the observation for that time step. The median function uses the central value, while keeping an existing observation, removing outliers in a given time step. The average composition uses the average of all valid observations in the time step. Is will also remove outliers, but in this case a new smoothed observation is generated.
+
+The stack time composing function is the best pixel approach; it consists of ranking the time step images by the number of valid observations and selecting the observation from the better-ranked image. The stack composition ensures that observations coming from less cloud coverage have a higher probability of being selected to represent the time step.
+
+.. figure:: ./imgs/compositing_function.png
+    :alt: BDC Cube Builder
+    :width: 600
+    :figclass: align-center
+    :name: fig:bdc-compositing-functions
+
+    Brazil Data Cube time composing functions (average, median and stack) applied on a pixel obtained from a monthly time step.
+
+
+The image collections and data cubes are distributed as Cloud Optimized GeoTIFF (COG) files, with an internal organization that enables efficient data access in the distributed and high-performance cloud environments. In the data cubes, each GeoTIFF file contains information of a band or property of a specific tile of the BDC tiling system and of a certain time period.
+
+Besides the spectral bands from original satellite images, the data cube files also contain: (1) cloud mask; (2) spectral indices (NDVI and EVI); (3) a band that indicates the total of valid observations (excluding cloud, cloud shadow, snow, or partial images) for pixel before time composing; (4) a data provenance band that indicates the image of origin of each pixel, when stack composing function is applied; (5) a thumbnail for each time step.
