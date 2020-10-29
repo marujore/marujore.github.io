@@ -17,7 +17,7 @@ Nowadays we have free access to an unprecedentedly large amount of remote sensin
 .. toctree::
     :maxdepth: 1
 
-    ./marujo_thesys
+    ./marujo_thesis
     ./initiatives
     ./bdc
     ./bdc_concepts
