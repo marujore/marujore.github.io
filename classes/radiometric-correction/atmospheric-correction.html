@@ -1,46 +1,49 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Atmospheric Correction &mdash; Rennan Marujo</title>
   
 
   
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+
+  
   
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
   
+
   
   
     <link rel="canonical" href="https://rennan-marujo.github.io/classes/radiometric-correction/atmospheric-correction.html"/>
   
 
   
-  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-        <script type="text/javascript" src="../../_static/jquery.js"></script>
-        <script type="text/javascript" src="../../_static/underscore.js"></script>
-        <script type="text/javascript" src="../../_static/doctools.js"></script>
-        <script type="text/javascript" src="../../_static/language_data.js"></script>
-        <script type="text/javascript" src="../../_static/clipboard.min.js"></script>
-        <script type="text/javascript" src="../../_static/copybutton.js"></script>
-        <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
     
     <script type="text/javascript" src="../../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Nadir BRDF (Bidirectional Reflectance Distribution Function)-Adjusted Reflectance (NBAR)" href="nbar.html" />
@@ -84,6 +87,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -106,6 +110,7 @@
 <li class="toctree-l3"><a class="reference internal" href="calibration-coefficient.html">Calibration Coefficient</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Atmospheric Correction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="nbar.html">Nadir BRDF (Bidirectional Reflectance Distribution Function)-Adjusted Reflectance (NBAR)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="isprs2021.html">ISPRS 2021 Article</a></li>
 <li class="toctree-l3"><a class="reference internal" href="intro.html#references">Referênces</a></li>
 </ul>
 </li>
@@ -133,6 +138,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -167,11 +173,13 @@
 
 
 
+
+
 <div role="navigation" aria-label="breadcrumbs navigation">
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../../index.html">Docs</a> &raquo;</li>
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
         
           <li><a href="../classes.html">Classes</a> &raquo;</li>
         
@@ -182,7 +190,7 @@
     
       <li class="wy-breadcrumbs-aside">
         
-            
+          
         
       </li>
     
@@ -191,10 +199,10 @@
   
   <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
       
-        <a href="nbar.html" class="btn btn-neutral float-right" title="Nadir BRDF (Bidirectional Reflectance Distribution Function)-Adjusted Reflectance (NBAR)" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="nbar.html" class="btn btn-neutral float-right" title="Nadir BRDF (Bidirectional Reflectance Distribution Function)-Adjusted Reflectance (NBAR)" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
       
       
-        <a href="calibration-coefficient.html" class="btn btn-neutral float-left" title="Calibration Coefficient" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="calibration-coefficient.html" class="btn btn-neutral float-left" title="Calibration Coefficient" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
       
   </div>
   
@@ -226,7 +234,7 @@
 <div class="section" id="atmospheric-correction-processor-dockers">
 <h3>Atmospheric Correction Processor Dockers<a class="headerlink" href="#atmospheric-correction-processor-dockers" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://github.com/marujore/LaSRC-LEDAPS-Fmask">LaSRC LEDAPS FMASK (all in one)</a></p>
-<p><a class="reference external" href="https://github.com/marujore/LaSRC_docker">LaSRC</a></p>
+<p><a class="reference external" href="https://github.com/marujore/LaSRC-docker">LaSRC</a></p>
 <p><a class="reference external" href="https://github.com/marujore/sen2cor">Sen2cor</a></p>
 </div>
 </div>
@@ -246,28 +254,21 @@
            
           </div>
           <footer>
-  
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="nbar.html" class="btn btn-neutral float-right" title="Nadir BRDF (Bidirectional Reflectance Distribution Function)-Adjusted Reflectance (NBAR)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="calibration-coefficient.html" class="btn btn-neutral float-left" title="Calibration Coefficient" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+        <a href="nbar.html" class="btn btn-neutral float-right" title="Nadir BRDF (Bidirectional Reflectance Distribution Function)-Adjusted Reflectance (NBAR)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="calibration-coefficient.html" class="btn btn-neutral float-left" title="Calibration Coefficient" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, Rennan Marujo.
+        &#169; Copyright 2020, Rennan Marujo..
 
     </p>
   </div> 
 
 </footer>
-
         </div>
       </div>
 
@@ -275,7 +276,6 @@
 
   </div>
   
-
 
   <script type="text/javascript">
       jQuery(function () {
@@ -294,6 +294,7 @@
     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'XXXXXXXXXX', 'auto');
+    
     ga('send', 'pageview');
     </script>
 

@@ -38,6 +38,7 @@ Basically radiometric corrections consists in correcting data from Digital Numbe
     ./calibration-coefficient
     ./atmospheric-correction
     ./nbar
+    ./isprs2021
 
 
 Referênces

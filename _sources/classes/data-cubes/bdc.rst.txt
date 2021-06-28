@@ -10,7 +10,7 @@ Brazil Data Cube
 `Brazil Data Cube (BDC) <http://brazildatacube.dpi.inpe.br/portal/explore>`_ project started on 2019 January by INPE `(Brazil National Institute for Space Research) <http://www.inpe.br/>`_, with the objective of creating multidimensional medium spatial resolution analysis ready images for the entire Brazilian territory and generate land use and land cover information through machine learning and satellite time series.
 
 Brazil Data Cube is a subproject of the Environmental Monitoring of Brazilian Biomes, funded by `
-Amazon Fund <http://www.fundoamazonia.gov.br/pt/projeto/Monitoramento-Ambiental-dos-Biomas-Brasileiros/>`_, through a finantial colaboration with BNDES and `FUNCATE <https://www.funcate.org.br/pt/>`_ nº 17.2.0536.1.
+Amazon Fund <http://www.fundoamazonia.gov.br/pt/projeto/Monitoramento-Ambiental-dos-Biomas-Brasileiros/>`_, through a financial collaboration with BNDES and `FUNCATE <https://www.funcate.org.br/pt/>`_ nº 17.2.0536.1.
 
 .. figure:: ./imgs/github-logo.png
     :alt: GitHub Logo

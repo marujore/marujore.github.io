@@ -11,7 +11,7 @@ Nowadays we have free access to an unprecedentedly large amount of remote sensin
     :figclass: align-center
     :name: fig:dc_example
 
-    Data Cube example. Source: Adapted from https://www.mdba.gov.au/sites/default/files/pubs/Data-cube-report.pdf
+    Data Cube example. Source: Adapted from https://www.mdba.gov.au/sites/default/files/pubs/Data-cube-report.pdf.
 
 
 .. toctree::

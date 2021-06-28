@@ -58,7 +58,7 @@ The absence of Earth’s surface observations, illustrated in :numref:`Figure %s
     :figclass: align-center
     :name: fig:vuolo_gaps
 
-    Illustration of the main radiometric problems occurring when working with satellite data.The first image illustrates the presence of clouds, which affects the surface observation byoptical sensors. The second image illustrates the Landsat-7/ETM+ Scan Line Corrector(SLC) failure, which implies in stripes of missing data. The third image corresponds topartial images, which occurs on the path/rows borders.Source: Adapted from :ref:`(VUOLO et al., 2017)<Vuolo2017>`.
+    Illustration of the main radiometric problems occurring when working with satellite data. The first image illustrates the presence of clouds, which affects the surface observation by optical sensors. The second image illustrates the Landsat-7/ETM+ Scan Line Corrector (SLC) failure, which implies in stripes of missing data. The third image corresponds to partial images, which occurs on the path/rows borders.Source: Adapted from :ref:`(VUOLO et al., 2017)<Vuolo2017>`.
 
 
 Landsat-7, one of the most utilized satellites,began to present hardware failure on Enhanced Thematic Plus (ETM+) Scan LineCorrector (SLC) in May 2003, resulting in gaps of valid values, or missing data sections on the acquired images. The images collected before such failures are called SLC-on images, and afterwards they are referred as SLC-off. The gaps correspond to a single pixel near the center of a path/row image and can reach 14 pixels in width near image borders :ref:`(STOREY et al., 2005)<Storey2005>`, as illustrated in :numref:`Figure %s <fig:L7_gaps>`.
@@ -97,7 +97,7 @@ The gap-filling through segmentation has been improved further by using several 
     :figclass: align-center
     :name: fig:maxwell2007
 
-    A target image that contains gaps, in this case a Landsat-7/ETM+ SLC-off (a); areference image, in this case a Landsat-8/OLI acquired in a close date (b); the referenceimage is segmented (c); the segmentation is overlayed in the target image (d); the modevalue within the segment is calculated and used to fill missing data (e); resulted syntheticimage (f).
+    A target image that contains gaps, in this case a Landsat-7/ETM+ SLC-off (a); a reference image, in this case a Landsat-8/OLI acquired in a close date (b); the reference image is segmented (c); the segmentation is overlayed in the target image (d); the mode value within the segment is calculated and used to fill missing data (e); resulted synthetic image (f).
 
 
 Maxwell Gap-filling Approach Adaptation with pixel weighting
@@ -118,7 +118,7 @@ The Gap-filling procedure is illustrated in :numref:`Figure %s <fig:fill_small_g
     :figclass: align-center
     :name: fig:fill_small_gaps_marujo
 
-    Segmentation approach fills Landsat-7 SLC-off gap images: (a) a target image containsgaps, in this case a Landsat-7 SLC-off; (b) a reference image is used, such as Landsat-5or Landsat-8 acquired in a close date; (c) the reference image is segmented; (d) thesesegments are applied in the reference image; (e) the segment mean value is calculated andused to calculate pixel weights; (f) the segmentation is overlayed in the target image andthe mean value within the segment is calculated; (g) for each pixel within the segment,its weight is multiplyed by the segment mean; (h) the gaps are filled with this result; (i)a synthetic image is obtained.
+    Segmentation approach fills Landsat-7 SLC-off gap images: (a) a target image contains gaps, in this case a Landsat-7 SLC-off; (b) a reference image is used, such as Landsat-5 or Landsat-8 acquired in a close date; (c) the reference image is segmented; (d) the sesegments are applied in the reference image; (e) the segment mean value is calculated and used to calculate pixel weights; (f) the segmentation is overlayed in the target image and the mean value within the segment is calculated; (g) for each pixel within the segment, its weight is multiplyed by the segment mean; (h) the gaps are filled with this result; (i) a synthetic image is obtained.
 
 
 .. figure:: ./imgs/cube_gaps1.png
@@ -127,7 +127,7 @@ The Gap-filling procedure is illustrated in :numref:`Figure %s <fig:fill_small_g
     :figclass: align-center
     :name: fig:cube_gaps1
 
-    Visual comparison (NIR band) between SLC-off Landsat-7/ETM+ from 10 August 2015(superior) and the image filled through the proposed gap-filling approach (inferior)
+    Visual comparison (NIR band) between SLC-off Landsat-7/ETM+ from 10 August 2015 (superior) and the image filled through the proposed gap-filling approach (inferior)
 
 
 .. figure:: ./imgs/gap_comparison.png
@@ -136,7 +136,7 @@ The Gap-filling procedure is illustrated in :numref:`Figure %s <fig:fill_small_g
     :figclass: align-center
     :name: fig:gap_comparison
 
-    SLC-off Landsat-7/ETM+ NIR band image (a); NIR band image from “a” filled throughMaxwell et al. (2007) hierarchical multi-scale segmentation method (b) and the sameimage fromafilled through the proposed method, which uses segmentation pixel weighting(c).
+    SLC-off Landsat-7/ETM+ NIR band image (a); NIR band image from “a” filled throughMaxwell et al. (2007) hierarchical multi-scale segmentation method (b) and the same image fromafilled through the proposed method, which uses segmentation pixel weighting(c).
 
 
 Python implementation (Under Development) https://github.com/marujore/eofilling.py

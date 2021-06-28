@@ -48,7 +48,7 @@ Atmospheric Correction Processor Dockers
 `LaSRC LEDAPS FMASK (all in one) <https://github.com/marujore/LaSRC-LEDAPS-Fmask>`_
 
 
-`LaSRC <https://github.com/marujore/LaSRC_docker>`_
+`LaSRC <https://github.com/marujore/LaSRC-docker>`_
 
 
 `Sen2cor <https://github.com/marujore/sen2cor>`_

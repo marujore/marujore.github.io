@@ -9,7 +9,7 @@ DN conversion to TOA Radiance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-The raw digital numbers (DN) in the images like Landsat can be converted to top-of-atmosphere (TOA) radiance. Equations adequate the sensor measured data using sensor-specific information and remove the effects of differences in illumination geometry (different solar angle, Earth-sun distance).
+The raw digital numbers (DN) in the images like Landsat can be converted to top-of-atmosphere (TOA) radiance. Equations adequate the sensor measured data using sensor-specific information.
 
 
 .. math:: L_{\lambda} = M_{L}Q_{cal} + A_{L}
