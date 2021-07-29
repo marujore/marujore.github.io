@@ -1,0 +1,314 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Nadir BRDF (Bidirectional Reflectance Distribution Function)-Adjusted Reflectance (NBAR) &mdash; Rennan Marujo</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+    <link rel="canonical" href="https://rennan-marujo.github.io/classes/radiometric-correction/nbar.html"/>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="ISPRS 2021 Article" href="isprs2021.html" />
+    <link rel="prev" title="Atmospheric Correction" href="atmospheric-correction.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Rennan Marujo
+          
+
+          
+            
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Rennan Marujo</a></li>
+</ul>
+<p class="caption"><span class="caption-text">General Information:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../general-info/general-info.html">General Information</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Classes:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../classes.html">Classes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="intro.html">Radiometric Correction</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="image-acquisition.html">Image acquisition and quantification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="calibration-coefficient.html">Calibration Coefficient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="atmospheric-correction.html">Atmospheric Correction</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Nadir BRDF (Bidirectional Reflectance Distribution Function)-Adjusted Reflectance (NBAR)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="isprs2021.html">ISPRS 2021 Article</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro.html#references">Referênces</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../data-cubes/intro.html">Data Cubes</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Publications:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../publications/publications.html">Publications</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Repositories:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../repositories/repositories.html">Repositories</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Personal Projects:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../personal-projects/personal-projects.html">Personal Projects</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contact:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contact/contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Rennan Marujo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../classes.html">Classes</a> &raquo;</li>
+        
+          <li><a href="intro.html">Radiometric Correction</a> &raquo;</li>
+        
+      <li>Nadir BRDF (Bidirectional Reflectance Distribution Function)-Adjusted Reflectance (NBAR)</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="isprs2021.html" class="btn btn-neutral float-right" title="ISPRS 2021 Article" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="atmospheric-correction.html" class="btn btn-neutral float-left" title="Atmospheric Correction" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="nadir-brdf-bidirectional-reflectance-distribution-function-adjusted-reflectance-nbar">
+<h1>Nadir BRDF (Bidirectional Reflectance Distribution Function)-Adjusted Reflectance (NBAR)<a class="headerlink" href="#nadir-brdf-bidirectional-reflectance-distribution-function-adjusted-reflectance-nbar" title="Permalink to this headline">¶</a></h1>
+<p>The Bi-directional Reflectance Distribution Function (BRDF) models the anisotropic scattering effects of surfaces under different illumination and observation conditions. In simple terms, BRDF describes mathematically the changes in reflectance that we observe when an illuminated target is viewed from different angles. BRDF enables prediction of surface reflectance as a function of solar and viewing geometry. The BRDF is wavelength dependent and is determined by the structural and optical properties of the surface. These properties include shadowing, multiple scattering, transmission, reflection, and absorption and emission by surface elements. The BRDF parameters derived from the BRDF fitting can be inverted to predict what reflectance should be in a given sensor/solar geometry. This allows prediction of reflectance for nadir observations at a mean solar zenith angle to generate Nadir BRDF adjusted reflectance (NBAR) products.</p>
+<div class="align-center figure align-default" id="fig-sensor-spectral-info">
+<a class="reference internal image-reference" href="../../_images/sensor_spectral_info.png"><img alt="HLS" src="../../_images/sensor_spectral_info.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Figure 6 - </span><span class="caption-text">Landsat Sentinel Spectral Information.</span><a class="headerlink" href="#fig-sensor-spectral-info" title="Permalink to this image">¶</a></p>
+</div>
+<div class="section" id="c-factor">
+<h2>C-factor<a class="headerlink" href="#c-factor" title="Permalink to this headline">¶</a></h2>
+<p>To adjust the view and illumination angles (BRDF) between different sensors, e. g. Landsat 8 and Sentinel-2, normalizing the BRDF effects is desirable. Retrieving the BRDF information directly from medium resolution optical remote sensing data is not feasible with the current temporal and angular distribution of the data. Instead, the BRDF information needs to be ingested as a priori <a class="reference internal" href="#claverie2018"><span class="std std-ref">(Claverie et al., 2018)</span></a>.</p>
+<p>In this context, the c-factor technique <a class="reference internal" href="#roy2016"><span class="std std-ref">(Roy et al., 2018)</span></a> uses fixed BRDF coefficients for each spectral band, i.e., a constant BRDF shape, derived from a large number of pixels in the MODIS 500m BRDF product (MCD43) that are globally and temporally distributed (&gt; 15 billion pixels) <a class="reference internal" href="#claverie2018"><span class="std std-ref">(Claverie et al., 2018)</span></a>.</p>
+<div class="math notranslate nohighlight">
+\[BRF(\theta_{s}, \theta_{v}, \phi, \lambda) = f_{iso}(\lambda) + f_{vol}(\lambda)K_{vol}(\theta_{s}, \theta_{v}, \phi, \lambda) + f_{geo}(\lambda)K_{geo}(\theta_{s}, \theta_{v}, \phi, \lambda)\]</div>
+<p>where <span class="math notranslate nohighlight">\(f_{iso}\)</span>, <span class="math notranslate nohighlight">\(f_{vol}\)</span>, <span class="math notranslate nohighlight">\(f_{geo}\)</span> are spectrally de- pendent BRDF model parameters;</p>
+<p><span class="math notranslate nohighlight">\(K_{vol}\)</span> and <span class="math notranslate nohighlight">\(K_{geo}\)</span> are the volumetric scattering and geometric-optical model kernels respectively which depend only on the sun-view geometry.</p>
+</div>
+<div class="section" id="bandpass">
+<h2>Bandpass<a class="headerlink" href="#bandpass" title="Permalink to this headline">¶</a></h2>
+<p>Sensor harmonization may require adjustment of the differences between the spectral bands wavelenghts and width of different sensors. In HLS OLI spectral bandpasses are used as reference, to which the MSI spectral bands are adjusted by using a gain and offset for each band. HLS used <em>Earth Observing-1/Hyperion</em> to estimate the bandpass values <a class="reference internal" href="#claverie2018"><span class="std std-ref">(Claverie et al., 2018)</span></a>.</p>
+</div>
+<div class="section" id="harmonized-landsat-sentinel-hls">
+<h2>Harmonized Landsat Sentinel (HLS)<a class="headerlink" href="#harmonized-landsat-sentinel-hls" title="Permalink to this headline">¶</a></h2>
+<div class="align-center figure align-default" id="fig-hls">
+<a class="reference internal image-reference" href="../../_images/HLS.png"><img alt="HLS" src="../../_images/HLS.png" style="width: 600px;" /></a>
+<p class="caption"><span class="caption-number">Figure 7 - </span><span class="caption-text">Harmonized Landsat Sentinel (HLS) processing. <strong>Source</strong> <a class="reference external" href="https://hls.gsfc.nasa.gov/algorithms/">HLS website</a>.</span><a class="headerlink" href="#fig-hls" title="Permalink to this image">¶</a></p>
+</div>
+<p><a class="reference external" href="https://hls.gsfc.nasa.gov/">https://hls.gsfc.nasa.gov/</a></p>
+</div>
+<div class="section" id="sensor-harmonization-processor">
+<h2>Sensor Harmonization Processor<a class="headerlink" href="#sensor-harmonization-processor" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://github.com/marujore/sensor_harmonization">Sentinel-2 Landsat-8 (UNDER DEVELOPMENT)</a></p>
+<div class="section" id="references">
+<h3>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h3>
+<ul class="simple" id="claverie2018">
+<li><p>CLAVERIE, M. Ju, J., MASEK, J. G. DUNGAN, J. L., VERMOTE, E. F., ROGER, J. C., SKAKUN, S. V., JUSTICE, C. The Harmonized Landsat and Sentinel-2 surface reflectance data set. Remote Sensing of Environment, volume 219, p. 145–161. 2018. <a class="reference external" href="https://10.1016/j.rse.2018.09.002">https://10.1016/j.rse.2018.09.002</a></p></li>
+</ul>
+<ul class="simple" id="roy2016">
+<li><p>ROY, D. P., ZHANG, H. K., JU, J., GOMEZ-DANS, J. L., LEWIS, P. E., SCHAAF, C. B., SUN, Q., LI, J., HUANG, H., KOVALSKYY, V. A general method to normalize Landsat reflectance data to nadir BRDF adjusted reflectance. Remote Sensing of Environment, volume 176, p. 255–271. 2016. <a class="reference external" href="https://10.1016/j.rse.2016.01.023">https://10.1016/j.rse.2016.01.023</a></p></li>
+</ul>
+<ul class="simple" id="wagener2015">
+<li><p>WAGNER, F. H., BREDE, V., VERBESSELT, J. ARAGÃO, L. E. O. C. Correction of sun-sensor geometry effects from MODIS MCD43A1 product for tropical forest applications. proceedings Simpósio Brasileiro de Sensoriamento Remoto, volume 17, p. 1097–1104. 2015. <a class="reference external" href="http://www.dsr.inpe.br/sbsr2015/files/p0204.pdf">http://www.dsr.inpe.br/sbsr2015/files/p0204.pdf</a>.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="isprs2021.html" class="btn btn-neutral float-right" title="ISPRS 2021 Article" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="atmospheric-correction.html" class="btn btn-neutral float-left" title="Atmospheric Correction" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Rennan Marujo..
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'XXXXXXXXXX', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>

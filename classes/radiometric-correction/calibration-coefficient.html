@@ -1,0 +1,519 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Calibration Coefficient &mdash; Rennan Marujo</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/tabs.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+  
+
+  
+  
+    <link rel="canonical" href="https://rennan-marujo.github.io/classes/radiometric-correction/calibration-coefficient.html"/>
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/clipboard.min.js"></script>
+        <script src="../../_static/copybutton.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Atmospheric Correction" href="atmospheric-correction.html" />
+    <link rel="prev" title="Image acquisition and quantification" href="image-acquisition.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #2980B9" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> Rennan Marujo
+          
+
+          
+            
+            <img src="../../_static/logo.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">Rennan Marujo</a></li>
+</ul>
+<p class="caption"><span class="caption-text">General Information:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../general-info/general-info.html">General Information</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Classes:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../classes.html">Classes</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="intro.html">Radiometric Correction</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="image-acquisition.html">Image acquisition and quantification</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Calibration Coefficient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="atmospheric-correction.html">Atmospheric Correction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nbar.html">Nadir BRDF (Bidirectional Reflectance Distribution Function)-Adjusted Reflectance (NBAR)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="isprs2021.html">ISPRS 2021 Article</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro.html#references">Referênces</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../data-cubes/intro.html">Data Cubes</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Publications:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../publications/publications.html">Publications</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Repositories:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../repositories/repositories.html">Repositories</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Personal Projects:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../personal-projects/personal-projects.html">Personal Projects</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Contact:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contact/contact.html">Contact</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Rennan Marujo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content style-external-links">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../classes.html">Classes</a> &raquo;</li>
+        
+          <li><a href="intro.html">Radiometric Correction</a> &raquo;</li>
+        
+      <li>Calibration Coefficient</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <div class="rst-breadcrumbs-buttons" role="navigation" aria-label="breadcrumb navigation">
+      
+        <a href="atmospheric-correction.html" class="btn btn-neutral float-right" title="Atmospheric Correction" accesskey="n">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+      
+      
+        <a href="image-acquisition.html" class="btn btn-neutral float-left" title="Image acquisition and quantification" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+      
+  </div>
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="calibration-coefficient">
+<h1>Calibration Coefficient<a class="headerlink" href="#calibration-coefficient" title="Permalink to this headline">¶</a></h1>
+<p>The electromagnetic radiation intensity recorded by an imaging system for each pixel as a digital number (DN) can be converted to more real world units like radiance, reflectance or brightness temperature. However, the coefficients are sensor dependent requiring specific information in order to be used in the calibration process.</p>
+<div class="section" id="dn-conversion-to-toa-radiance">
+<h2>DN conversion to TOA Radiance<a class="headerlink" href="#dn-conversion-to-toa-radiance" title="Permalink to this headline">¶</a></h2>
+<p>The raw digital numbers (DN) in the images like Landsat can be converted to top-of-atmosphere (TOA) radiance. Equations adequate the sensor measured data using sensor-specific information.</p>
+<div class="math notranslate nohighlight">
+\[L_{\lambda} = M_{L}Q_{cal} + A_{L}\]</div>
+<p>where:</p>
+<p><span class="math notranslate nohighlight">\(L_{\lambda}\)</span> = TOA spectral radiance (<span class="math notranslate nohighlight">\(Watts/(m^{2} * srad * \mu m)\)</span>);</p>
+<p><span class="math notranslate nohighlight">\(M_{L}\)</span> = Band-specific multiplicative rescaling factor from the metadata;</p>
+<p><span class="math notranslate nohighlight">\(A_{L}\)</span> = Band-specific additive rescaling factor from the metadata;</p>
+<p><span class="math notranslate nohighlight">\(Q_{cal}\)</span> = Quantized and calibrated standard product pixel values (DN).</p>
+<p>CBERS-4 coefficients: <a class="reference internal" href="#pinto2016"><span class="std std-ref">Pinto et al., 2016</span></a>;
+Landsat-7 coefficients: <a class="reference external" href="https://prd-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/atoms/files/LSDS-1927_L7_Data_Users_Handbook-v2.pdf">Landsat-7 User Guide</a></p>
+</div>
+<div class="section" id="toa-radiance-conversion-to-toa-reflectance">
+<h2>TOA Radiance conversion to TOA Reflectance<a class="headerlink" href="#toa-radiance-conversion-to-toa-reflectance" title="Permalink to this headline">¶</a></h2>
+<p>Equations rescale the data based on sensor specific information and remove the effects of differences in illumination geometry (different solar angle, Earth-sun distance) by doing a ratio between the Radiantion leaving the Earth and the radiation reaching the Earth from the Sun.</p>
+<div class="math notranslate nohighlight">
+\[\frac{Radiance}{Irradiance}\]</div>
+<div class="math notranslate nohighlight">
+\[\rho_{p} = \frac{\pi * L_{\lambda}*d^{2}}{Esun_{\lambda}*cos(\theta_{s})}\]</div>
+<p>where:</p>
+<p><span class="math notranslate nohighlight">\(d\)</span> is the Earth Sun distance in astronomical unit;</p>
+<p><span class="math notranslate nohighlight">\(Esun_{\lambda}'\)</span> is the solar exoatmospheric spectral irradiance;</p>
+<p><span class="math notranslate nohighlight">\(cos(\theta_{s})\)</span> is the sun zenith = <span class="math notranslate nohighlight">\(90^{\circ}\)</span> - sun elevation.</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 28%" />
+<col style="width: 22%" />
+<col style="width: 28%" />
+<col style="width: 22%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="4" rowspan="2"><p>d</p></th>
+</tr>
+<tr class="row-even"></tr>
+<tr class="row-odd"><th class="head"><p>Day of Year</p></th>
+<th class="head"><p>Distance</p></th>
+<th class="head"><p>Day of Year</p></th>
+<th class="head"><p>Distance</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>0.98331</p></td>
+<td><p>196</p></td>
+<td><p>1.01646</p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p>0.98365</p></td>
+<td><p>213</p></td>
+<td><p>1.01497</p></td>
+</tr>
+<tr class="row-even"><td><p>32</p></td>
+<td><p>0.98509</p></td>
+<td><p>227</p></td>
+<td><p>1.01281</p></td>
+</tr>
+<tr class="row-odd"><td><p>46</p></td>
+<td><p>0.98774</p></td>
+<td><p>242</p></td>
+<td><p>1.00969</p></td>
+</tr>
+<tr class="row-even"><td><p>60</p></td>
+<td><p>0.99084</p></td>
+<td><p>258</p></td>
+<td><p>1.00566</p></td>
+</tr>
+<tr class="row-odd"><td><p>74</p></td>
+<td><p>0.99446</p></td>
+<td><p>274</p></td>
+<td><p>1.00119</p></td>
+</tr>
+<tr class="row-even"><td><p>91</p></td>
+<td><p>0.99926</p></td>
+<td><p>288</p></td>
+<td><p>0.99718</p></td>
+</tr>
+<tr class="row-odd"><td><p>106</p></td>
+<td><p>1.00353</p></td>
+<td><p>305</p></td>
+<td><p>0.99253</p></td>
+</tr>
+<tr class="row-even"><td><p>121</p></td>
+<td><p>1.00756</p></td>
+<td><p>319</p></td>
+<td><p>0.98916</p></td>
+</tr>
+<tr class="row-odd"><td><p>135</p></td>
+<td><p>1.01087</p></td>
+<td><p>335</p></td>
+<td><p>0.98608</p></td>
+</tr>
+<tr class="row-even"><td><p>152</p></td>
+<td><p>1.01403</p></td>
+<td><p>349</p></td>
+<td><p>0.98426</p></td>
+</tr>
+<tr class="row-odd"><td><p>166</p></td>
+<td><p>1.01577</p></td>
+<td><p>365</p></td>
+<td><p>0.98331</p></td>
+</tr>
+<tr class="row-even"><td><p>182</p></td>
+<td><p>1.01667</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Source</strong>: <a class="reference external" href="https://prd-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/atoms/files/LSDS-1927_L7_Data_Users_Handbook-v2.pdf">Landsat-7 User Guide</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 22%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" colspan="5"><p>Landsat-7 <span class="math notranslate nohighlight">\(Esun_{\lambda} (Watts/(m^{2} * \mu m))\)</span></p></th>
+</tr>
+<tr class="row-even"><th class="head"><p>Band Number</p></th>
+<th class="head"><p>Landsat 7 ETM+</p></th>
+<th class="head"><p>Landsat 5 TM</p></th>
+<th class="head"><p>Landsat 4 TM</p></th>
+<th class="head"><p>Landsat 1-5 MSS</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>1970</p></td>
+<td><p>1958</p></td>
+<td><p>1958</p></td>
+<td><p>1848</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>1842</p></td>
+<td><p>1827</p></td>
+<td><p>1826</p></td>
+<td><p>1588</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>1547</p></td>
+<td><p>1551</p></td>
+<td><p>1554</p></td>
+<td><p>1235</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>1044</p></td>
+<td><p>1036</p></td>
+<td><p>1033</p></td>
+<td><p>856.6</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>225.7</p></td>
+<td><p>214.9</p></td>
+<td><p>214.7</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p>82.06</p></td>
+<td><p>80.65</p></td>
+<td><p>80.70</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>8</p></td>
+<td><p>1369</p></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Source</strong>: <a class="reference external" href="https://prd-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/atoms/files/LSDS-1927_L7_Data_Users_Handbook-v2.pdf">Landsat-7 User Guide</a></p>
+<p><strong>Source</strong>: <a class="reference external" href="https://www.usgs.gov/core-science-systems/nli/landsat/using-usgs-landsat-level-1-data-product">Solar exoatmospheric spectral irradiances (ESUN) for the Landsat 1-7 data</a></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 15%" />
+<col style="width: 42%" />
+<col style="width: 43%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head" rowspan="2"><p>Spectral Bands (nm)</p></th>
+<th class="head" rowspan="2"><p><span class="math notranslate nohighlight">\(Esun_{\lambda}'\)</span> MUX <span class="math notranslate nohighlight">\(Watts/(m^{2} * \mu m)\)</span></p></th>
+<th class="head" rowspan="2"><p><span class="math notranslate nohighlight">\(Esun_{\lambda}'\)</span> AWFI <span class="math notranslate nohighlight">\(Watts/(m^{2} * \mu m)\)</span></p></th>
+</tr>
+<tr class="row-even"></tr>
+</thead>
+<tbody>
+<tr class="row-odd"><td rowspan="2"><p>450-520 (Blue)</p></td>
+<td rowspan="2"><div class="line-block">
+<div class="line">1958 <span class="math notranslate nohighlight">\(\pm\)</span> 35</div>
+</div>
+</td>
+<td rowspan="2"><p>1952 <span class="math notranslate nohighlight">\(\pm\)</span> 35</p></td>
+</tr>
+<tr class="row-even"></tr>
+<tr class="row-odd"><td rowspan="2"><p>520-590 (Green)</p></td>
+<td rowspan="2"><div class="line-block">
+<div class="line">1852 <span class="math notranslate nohighlight">\(\pm\)</span> 29</div>
+</div>
+</td>
+<td rowspan="2"><p>1852 <span class="math notranslate nohighlight">\(\pm\)</span> 29</p></td>
+</tr>
+<tr class="row-even"></tr>
+<tr class="row-odd"><td rowspan="2"><p>630-690 (Red)</p></td>
+<td rowspan="2"><div class="line-block">
+<div class="line">1559 <span class="math notranslate nohighlight">\(\pm\)</span> 18</div>
+</div>
+</td>
+<td rowspan="2"><p>1545 <span class="math notranslate nohighlight">\(\pm\)</span> 18</p></td>
+</tr>
+<tr class="row-even"></tr>
+<tr class="row-odd"><td rowspan="2"><p>770-890 (NIR)</p></td>
+<td rowspan="2"><div class="line-block">
+<div class="line">1091 <span class="math notranslate nohighlight">\(\pm\)</span> 11</div>
+</div>
+</td>
+<td rowspan="2"><p>1098 <span class="math notranslate nohighlight">\(\pm\)</span> 11</p></td>
+</tr>
+<tr class="row-even"></tr>
+</tbody>
+</table>
+<p><strong>Source</strong>: <a class="reference internal" href="#pinto2016"><span class="std std-ref">Pinto et al., 2016</span></a></p>
+<p>For more accurate reflectance calculations, per-pixel solar angles could be used instead of the scene center solar angle. While per-pixel solar zenith angles are not provided with the Landsat Level-1 products, tools are provided which allow users to create <a class="reference external" href="https://www.usgs.gov/land-resources/nli/landsat/solar-illumination-and-sensor-viewing-angle-coefficient-files">angle bands</a> .</p>
+<p>NOTE: (For data prior to Landsat Collections processing) The recommended ESUN values Landsat 1-7 are listed in the table above. These values used with Landsat products currently generated at EROS ensure consistent radiometric calibration of data from all these sensors. (Note: although the data are consistently calibrated, calculated TOA reflectance over the same target may differ among the sensors due to the spectral bandpass difference.)</p>
+<p>ESUN values are not required for Landsat 8 data because Landsat 8’s metadata file provides coefficients necessary to convert to radiance and reflectance from the quantized and calibrated DNs of the product.</p>
+<p><a class="reference external" href="https://landsat.usgs.gov/spectral-characteristics-viewer">Relative Spectral Response (RSR)</a> of the OLI spectral bands can be used along with the user’s preferred solar spectrum to calculate ESUN values corresponding to Landsat 8 OLI bands. ESUN values are derived from the ChKur spectrum. The ChKur spectrum is the combined Chance-Kurucz Solar Spectrum within MODTRAN 5 (2011, Berk, A., Anderson, G.P., Acharya, P.K., Shettler, E.P., <a class="reference external" href="http://instrumentation.tamu.edu/~ting/other/MODTRAN(R)5.2.0.0.doc">MODTRAN 5.2.0.0 User’s Manual</a>).</p>
+</div>
+<div class="section" id="conversion-to-top-of-atmosphere-brightness-temperature">
+<h2>Conversion to Top of Atmosphere Brightness Temperature<a class="headerlink" href="#conversion-to-top-of-atmosphere-brightness-temperature" title="Permalink to this headline">¶</a></h2>
+<p>Thermal bands calibration is similar to the reflectance procedure. Data from many thermal sensors can be converted to Brightness Temperature, which is a temperature that is obtained by measure the emitted radiance of a surface, measured in Kelvin (K).</p>
+<div class="math notranslate nohighlight">
+\[T = \frac{K_{2}}{ln(\frac{K_{1}}{L_\lambda} + 1)}\]</div>
+<p>where:</p>
+<p><span class="math notranslate nohighlight">\(T\)</span> =  Top of atmosphere brightness temperature (K);</p>
+<p><span class="math notranslate nohighlight">\(L_{\lambda}\)</span> = TOA spectral radiance (<span class="math notranslate nohighlight">\(Watts/( m^{2} * srad * \mu m)\)</span>)</p>
+<p><span class="math notranslate nohighlight">\(K_{1}\)</span> = Band-specific thermal conversion constant;</p>
+<p><span class="math notranslate nohighlight">\(K_{2}\)</span> = Band-specific thermal conversion constant;</p>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<ul class="simple" id="pinto2016">
+<li><p>PINTO, C., PONZONI, F., CASTRO, R., LEIGH, L., MISHRA, N., AARON, D., HELDER, D. FFirst in-Flight Radiometric Calibration of MUX and WFI on-Board CBERS-4. Remote Sensing. 2016. doi: <a class="reference external" href="http://10.3390/rs8050405">http://10.3390/rs8050405</a>.</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="atmospheric-correction.html" class="btn btn-neutral float-right" title="Atmospheric Correction" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="image-acquisition.html" class="btn btn-neutral float-left" title="Image acquisition and quantification" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, Rennan Marujo..
+
+    </p>
+  </div> 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'XXXXXXXXXX', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+   
+
+</body>
+</html>
