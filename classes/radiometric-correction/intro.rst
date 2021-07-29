@@ -1,0 +1,60 @@
+Radiometric Correction
+----------------------
+
+
+Radiometric correction consists in correcting pixel values measured by a sensor. This is performed by adjusting the measured values through calibration coefficients in order to achieve observations with less errors and noise. This process improves remote sensed data quality and interpretability.
+
+
+Measures obtained by imaging systems, satellite sensors for instance, differ from ground measured observations. These differences are more evident when comparing multiple periods of time and are caused due to differences in atmospheric conditions and sun-sensor geometry. :numref:`Figure %s <fig:radiance>` illustrates various paths of radiance received by a remote sensing system. In this figure can be observed that the radiance received by the sensor includes diffuse sky irradiance, radiance from neighboring areas on the ground and other unwanted radiometric noise. The shorter the wavelengths, the more they are affected by atmospheric effects. Therefore, radiometric corrections try to minimize the errors caused by these effects in radiance or reflectance values.
+
+
+.. figure:: ./imgs/radiance.png
+    :alt: Radiance
+    :width: 600
+    :figclass: align-center
+    :name: fig:radiance
+
+
+    Radiance (L T) from paths 1, 3, and 5 contains intrinsic valuable spectral information about the target of interest. Conversely, the path radiance (Lp) from paths 2 and 4 includes diffuse sky irradiance or radiance from neighboring areas on the ground. This path radiance generally introduces unwanted radiometric noise in the remotely sensed data and complicates the image interpretation process. Source: :ref:`Jensen (2014) <jensen_2014>`.
+
+
+Basically radiometric corrections consists in correcting data from Digital Number to At-sensor radiance through calibration coefficients, then to Top of Atmosphere (ToA) and to Surface Reflectance, as can be seen in :numref:`Figure %s <fig:calibration>`, but can also consider topographic or illumination corrections.
+
+
+.. figure:: ./imgs/calibration.png
+    :alt: Radiance
+    :width: 600
+    :figclass: align-center
+    :name: fig:calibration
+
+
+    Radiometric Calibration & Correction Process. Source: :ref:`GSP216 <gsp216>`.
+
+
+.. toctree::
+    :maxdepth: 1
+
+    ./image-acquisition
+    ./calibration-coefficient
+    ./atmospheric-correction
+    ./nbar
+    ./isprs2021
+
+
+Referênces
+""""""""""
+
+
+.. _jensen_2014:
+
+- JENSEN, J. Remote sensing of the environment: an earth resource perspective (2.ed.). Edinburgh Gate, Harlow, England: Pearson, 2014. 614. ISBN 10: 1-292-02170-5. ISBN 13: 978-1-292-02170-6.
+
+
+.. _gonzales_2007:
+
+- GONZALEZ, R. C.; WOODS, R. E. Digital image processing (3.ed.). Upper Saddle River, NJ, USA: Pearson, 2007. 976p. ISSN 1098-6596. ISBN 013168728X.
+
+
+.. _gsp216:
+
+- GSP216. Introduction to Remote Sensing. Humboldt State University. http://gsp.humboldt.edu/OLM/Courses/GSP_216_Online/images/calibration.PNG .

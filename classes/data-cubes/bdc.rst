@@ -1,0 +1,34 @@
+Brazil Data Cube
+++++++++++++++++
+
+.. figure:: ./imgs/logo-bdc.png
+    :alt: Python Logo
+    :width: 150
+    :figclass: align-right
+
+
+`Brazil Data Cube (BDC) <http://brazildatacube.dpi.inpe.br/portal/explore>`_ project started on 2019 January by INPE `(Brazil National Institute for Space Research) <http://www.inpe.br/>`_, with the objective of creating multidimensional medium spatial resolution analysis ready images for the entire Brazilian territory and generate land use and land cover information through machine learning and satellite time series.
+
+Brazil Data Cube is a subproject of the Environmental Monitoring of Brazilian Biomes, funded by the `Amazon Fund <http://www.fundoamazonia.gov.br/pt/projeto/Monitoramento-Ambiental-dos-Biomas-Brasileiros/>`_, through a financial collaboration with BNDES and `FUNCATE <https://www.funcate.org.br/pt/>`_ nº 17.2.0536.1.
+
+.. figure:: ./imgs/github-logo.png
+    :alt: GitHub Logo
+    :width: 100
+    :figclass: align-left
+
+All codes are *open source*, and can be found in the `project official GitHub repository <https://github.com/brazil-data-cube>`_, which includes `acquisition and data processing <https://github.com/brazil-data-cube/bdc-collection-builder>`_, `Data Cube generation <https://github.com/brazil-data-cube/cube-builder>`_, `Data Base Model <https://github.com/brazil-data-cube/bdc-db>`_ frameworks, web portal page, services as  `WTSS <https://brazil-data-cube.github.io/applications/wtss.html>`_, and others.
+
+.. figure:: ./imgs/python-logo.png
+    :alt: Python Logo
+    :width: 100
+    :figclass: align-right
+
+Many of those developped using `Python <http://www.python.org/>`_ language.
+
+BDC process and makes available images from different sensors, providing several ready to use products, also called *Analysys Ready Data* (ARD), so researchers can focus on analysis instead of processing. These images processed by BDC are free and can be acquired on the `BDC Web Portal <http://brazildatacube.dpi.inpe.br/portal/explore>`_, which is done through *SpatioTemporal Asset Catalog* (STAC).
+
+
+Detailed information can be found on https://brazil-data-cube.github.io/products/specifications.html.
+
+
+Exmple codes can be found on https://github.com/brazil-data-cube/code-gallery.
